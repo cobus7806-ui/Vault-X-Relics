@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAULT X RELICS</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <style>
+        body { margin: 0; padding: 0; background: #000000; color: #FFFFFF; font-family: 'Bebas Neue', sans-serif; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
+        nav { position: absolute; top: 20px; width: 100%; text-align: center; z-index: 10; }
+        nav a { color: #FFFFFF; text-decoration: none; margin: 0 20px; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 3px; }
+        nav a:hover { text-decoration: underline; }
+        .logo-img { max-width: 85%; max-height: 55vh; object-fit: contain; margin: 30px 0; }
+        .content { font-size: 3.2rem; letter-spacing: 5px; line-height: 1.4; }
+        .domain { position: absolute; bottom: 20px; right: 20px; font-size: 0.9rem; opacity: 0.8; }
+        .domain a { color: #FFFFFF; text-decoration: none; }
+        #loading { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000000; display: flex; justify-content: center; align-items: center; z-index: 100; transition: opacity 1.5s ease-out; }
+        #loading img { max-width: 95%; max-height: 95%; object-fit: contain; }
+        .hidden { opacity: 0; pointer-events: none; }
+        @media (max-width: 768px) {
+            .content { font-size: 2.2rem; }
+            .logo-img { max-height: 45vh; }
+            nav a { margin: 0 10px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <img src="Vault-Door.jpg" alt="Vault 001 Cracking Open">
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="shop.html">SHOP</a>
+    </nav>
+
+    <img src="vault-x-logo.png" alt="Vault X Relics" class="logo-img">
+
+    <div class="content">
+        VAULT – X RELICS<br>
+        10 RELICS. SEALED FOREVER.<br>
+        001 DROPS 20 DECEMBER – 18:00 UTC.
+    </div>
+
+    <div class="domain">
+        <a href="https://vaultxrelics.com" target="_blank">vaultxrelics.com</a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('loading').classList.add('hidden');
+            }, 2500);
+        };
+    </script>
+</body>
+</html>
