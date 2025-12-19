@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Publishing — VAULT‑X‑RELICS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <meta name="robots" content="noindex"> <!-- avoid search indexing of this intermediate page -->
+
+  <style>
+    :root { --bg:#000; --fg:#fff; --muted:#bfbfbf; --accent:#f2d67a; }
+    html,body { height:100%; margin:0; }
+    body {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Bebas Neue', Helvetica, Arial, sans-serif;
+      text-align:center;
+      padding: 24px;
+      box-sizing:border-box;
+    }
+    .panel {
+      max-width:760px;
+      width:100%;
+      border:1px solid rgba(255,255,255,0.04);
+      background:rgba(255,255,255,0.02);
+      padding:28px;
+      border-radius:8px;
+    }
+    h1 { margin:0 0 8px 0; font-size:2rem; letter-spacing:3px; }
+    p { margin:8px 0; color:var(--muted); }
+    .actions { margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    a.button {
+      display:inline-block;
+      padding:10px 16px;
+      background:var(--accent);
+      color:#000;
+      text-decoration:none;
+      border-radius:6px;
+      font-weight:700;
+    }
+    button.secondary {
+      background:transparent;
+      color:var(--fg);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:10px 16px;
+      border-radius:6px;
+      cursor:pointer;
+    }
+    code { background: rgba(255,255,255,0.02); padding:6px 8px; border-radius:4px; color:var(--muted); }
+    .note { margin-top:14px; font-size:0.9rem; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="panel" role="main" aria-labelledby="publishing-heading">
+    <h1 id="publishing-heading">Publishing...</h1>
+    <p id="status">This page indicates the site publish step. In most setups you can safely replace this file or remove it once your site is live.</p>
+
+    <div class="actions">
+      <!-- quick link for testing -->
+      <a class="button" href="index.html" id="goHome">Open site (index)</a>
+      <button class="secondary" id="refreshBtn">Check again</button>
+    </div>
+
+    <p class="note">
+      If your host expected a <code>publish.html</code> file, upload this file to your site root alongside <code>index.html</code> and your assets.
+      After upload, open your site URL (or click "Open site") and verify <code>index.html</code> loads.
+    </p>
+
+    <p class="note" id="helpText">
+      Troubleshooting tips:
+      <ul style="text-align:left; display:inline-block; margin:8px 0 0 0; padding-left:18px;">
+        <li>Ensure <code>index.html</code> is present in the same directory.</li>
+        <li>Clear CDN or browser cache if you don't see updates.</li>
+        <li>Check your hosting provider's required entry filename (some expect <code>index.html</code>, not <code>publish.html</code>).</li>
+      </ul>
+    </p>
+  </div>
+
+  <script>
+    // Optional auto-check: try to load index.html to see whether the site is responding.
+    function checkIndex() {
+      var status = document.getElementById('status');
+      fetch('index.html', { method: 'HEAD', cache: 'no-store' })
+        .then(function (res) {
+          if (res.ok) {
+            status.textContent = 'index.html is available — click "Open site (index)" to view it.';
+          } else {
+            status.textContent = 'index.html responded with status ' + res.status + '. You may need to re-upload or check hosting settings.';
+          }
+        }).catch(function (err) {
+          status.textContent = 'Unable to reach index.html. If you just uploaded, wait a minute and try "Check again".';
+        });
+    }
+
+    document.getElementById('refreshBtn').addEventListener('click', function () {
+      checkIndex();
+    });
+
+    // run one automatic quick-check on load
+    window.addEventListener('load', function () {
+      setTimeout(checkIndex, 500);
+    });
+  </script>
+</body>
+</html>
