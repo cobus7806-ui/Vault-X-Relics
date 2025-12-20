@@ -7,13 +7,58 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
     <style>
         body { margin: 0; padding: 0; overflow: hidden; background: #000000; }
-        #video-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
-        nav { position: absolute; top: 20px; width: 100%; text-align: center; z-index: 10; }
-        nav a { color: #FFFFFF; text-decoration: none; margin: 0 20px; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 3px; font-family: 'Bebas Neue', sans-serif; }
+        #video-bg { 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            min-width: 100%; 
+            min-height: 100%; 
+            width: auto; 
+            height: auto; 
+            transform: translate(-50%, -50%); 
+            z-index: -1; 
+        }
+        nav { 
+            position: absolute; 
+            top: 20px; 
+            width: 100%; 
+            text-align: center; 
+            z-index: 10; 
+        }
+        nav a { 
+            color: #FFFFFF; 
+            text-decoration: none; 
+            margin: 0 20px; 
+            font-size: 1.3rem; 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            font-family: 'Bebas Neue', sans-serif; 
+        }
         nav a:hover { text-decoration: underline; }
-        .content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #FFFFFF; font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; letter-spacing: 5px; line-height: 1.4; z-index: 10; opacity: 0; transition: opacity 2s ease-in 5s; }
+        .content { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            text-align: center; 
+            color: #FFFFFF; 
+            font-family: 'Bebas Neue', sans-serif; 
+            font-size: 3.2rem; 
+            letter-spacing: 5px; 
+            line-height: 1.4; 
+            z-index: 10; 
+            opacity: 0; 
+            transition: opacity 2s ease-in; 
+        }
         .content.visible { opacity: 1; }
-        .domain { position: absolute; bottom: 20px; right: 20px; font-size: 0.9rem; opacity: 0.8; z-index: 10; }
+        .domain { 
+            position: absolute; 
+            bottom: 20px; 
+            right: 20px; 
+            font-size: 0.9rem; 
+            opacity: 0.8; 
+            z-index: 10; 
+        }
         .domain a { color: #FFFFFF; text-decoration: none; }
         @media (max-width: 768px) {
             .content { font-size: 2.2rem; }
@@ -22,7 +67,7 @@
     </style>
 </head>
 <body>
-    <video id="video-bg" autoplay muted loop playsinline>
+    <video id="video-bg" autoplay muted playsinline>
         <source src="vault-opening.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -47,10 +92,9 @@
     <script>
         const video = document.getElementById('video-bg');
         const content = document.getElementById('text-content');
-        video.onloadeddata = function() {
-            setTimeout(() => {
-                content.classList.add('visible');
-            }, 5000); // Text fades in after 5 seconds — adjust to video length
+
+        video.onended = function() {
+            content.classList.add('visible');
         };
     </script>
 </body>
