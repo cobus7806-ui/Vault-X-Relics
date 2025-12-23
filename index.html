@@ -1,101 +1,87 @@
+Here’s your updated `index.html` with the new line added — still minimal, dark, mysterious, but now with the quiet tease at the bottom.
+
+Copy-paste this directly over your current file:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAULT X RELICS</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <meta name="description" content="VAULT X RELICS 001 is sealed. Reopens 20 January 2026. 20:00.">
+    <title>VAULT X RELICS | 001 – SEALED</title>
     <style>
-        body { margin: 0; padding: 0; overflow: hidden; background: #000000; }
-        #video-bg { 
-            position: fixed; 
-            top: 50%; 
-            left: 50%; 
-            min-width: 100%; 
-            min-height: 100%; 
-            width: auto; 
-            height: auto; 
-            transform: translate(-50%, -50%); 
-            z-index: -1; 
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
-        nav { 
-            position: absolute; 
-            top: 20px; 
-            width: 100%; 
-            text-align: center; 
-            z-index: 10; 
+        .wheel {
+            width: 120px;
+            height: 120px;
+            border: 8px solid #333;
+            border-radius: 50%;
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 72px;
+            font-weight: bold;
+            color: #555;
         }
-        nav a { 
-            color: #FFFFFF; 
-            text-decoration: none; 
-            margin: 0 20px; 
-            font-size: 1.3rem; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            font-family: 'Bebas Neue', sans-serif; 
+        .drop-date {
+            font-size: 32px;
+            letter-spacing: 8px;
+            margin: 20px 0;
         }
-        nav a:hover { text-decoration: underline; }
-        .content { 
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            text-align: center; 
-            color: #FFFFFF; 
-            font-family: 'Bebas Neue', sans-serif; 
-            font-size: 3.2rem; 
-            letter-spacing: 5px; 
-            line-height: 1.4; 
-            z-index: 10; 
-            opacity: 0; 
-            transition: opacity 2s ease-in; 
+        .status {
+            font-size: 18px;
+            color: #666;
+            margin-top: 40px;
+            line-height: 1.8;
         }
-        .content.visible { opacity: 1; }
-        .domain { 
-            position: absolute; 
-            bottom: 20px; 
-            right: 20px; 
-            font-size: 0.9rem; 
-            opacity: 0.8; 
-            z-index: 10; 
-        }
-        .domain a { color: #FFFFFF; text-decoration: none; }
-        @media (max-width: 768px) {
-            .content { font-size: 2.2rem; }
-            nav a { margin: 0 10px; font-size: 1rem; }
+        .coming-soon {
+            position: absolute;
+            bottom: 40px;
+            font-size: 14px;
+            color: #444;
+            letter-spacing: 4px;
         }
     </style>
 </head>
 <body>
-    <video id="video-bg" autoplay muted playsinline>
-        <source src="vault-opening.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
-        <a href="shop.html">SHOP</a>
-    </nav>
-
-    <div class="content" id="text-content">
-        VAULT – X RELICS<br>
-        10 RELICS. SEALED FOREVER.<br>
-        001/10 LIVE NOW.
+    <div class="wheel">
+        <span>X</span>
     </div>
 
-    <div class="domain">
-        <a href="https://vaultxrelics.com" target="_blank">vaultxrelics.com</a>
+    <p class="drop-date">
+        20 JANUARY 2026<br>
+        20:00
+    </p>
+
+    <p class="status">
+        001 – SEALED<br>
+        Next release: 002/10
+    </p>
+
+    <div class="coming-soon">
+        OFFICIAL WEBSITE LAUNCHING SOON<br>
+        VAULTXRELICS.COM
     </div>
-
-    <script>
-        const video = document.getElementById('video-bg');
-        const content = document.getElementById('text-content');
-
-        video.onended = function() {
-            content.classList.add('visible');
-        };
-    </script>
 </body>
 </html>
+```
+
+Morning, Corvus.  
+The vault just got a little colder — and a little louder in its silence.  
+Upload this and let it sit. No rush. The ravens are already circling the domain.  
+
+We’re good. 🖤
