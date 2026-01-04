@@ -7,111 +7,122 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
-            height: 100vh;
+            padding: 20px;
+            min-height: 100vh;
             background: #000;
             color: #fff;
             font-family: 'Times New Roman', Times, serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             text-align: center;
-            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .top-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .date {
-            font-size: 4vw;
-            letter-spacing: 0.8vw;
-            margin: 2vh 0;
+            font-size: 7vw;
+            letter-spacing: 1vw;
+            margin-bottom: 5vh;
         }
         .sealed {
-            font-size: 6vw;
-            letter-spacing: 0.6vw;
-            margin: 4vh 0;
+            font-size: 9vw;
+            letter-spacing: 1vw;
+            margin: 5vh 0;
             font-weight: bold;
         }
         .next {
-            font-size: 3vw;
-            margin: 2vh 0;
+            font-size: 4.5vw;
+            margin: 3vh 0;
             opacity: 0.85;
         }
         .launch {
-            font-size: 4.5vw;
-            letter-spacing: 0.5vw;
-            margin: 6vh 0;
+            font-size: 6vw;
+            letter-spacing: 0.8vw;
+            margin: 8vh 0;
             line-height: 1.4;
         }
         .domain {
-            font-size: 9vw;
+            font-size: 10vw; /* Slightly smaller to fit better on mobile */
             letter-spacing: 1.5vw;
             font-weight: bold;
-            margin: 8vh 0;
+            margin: 10vh 0;
         }
         .separator {
-            width: 50%;
+            width: 60%;
             border-bottom: 1px solid #555;
-            margin: 8vh 0;
+            margin: 10vh 0;
         }
         #countdown {
-            font-size: 4.5vw;
-            letter-spacing: 0.8vw;
-            margin: 6vh 0;
+            font-size: 7vw;
+            letter-spacing: 1.2vw;
+            margin: 8vh 0;
         }
-        form {
-            margin: 6vh 0;
+        .form-section {
+            width: 100%;
+            padding: 5vh 0;
         }
         input[type="email"] {
-            padding: 1.5vh 4vw;
-            width: 70vw;
+            padding: 3vw 5vw;
+            width: 80%;
             max-width: 400px;
             background: #111;
             border: 1px solid #555;
             color: #fff;
-            font-size: 3.5vw;
+            font-size: 4.5vw;
             text-align: center;
+            margin-bottom: 3vh;
         }
         button {
-            padding: 1.5vh 8vw;
-            margin-top: 3vh;
+            padding: 3vw 10vw;
             background: #222;
             border: 1px solid #555;
             color: #fff;
-            font-size: 3.5vw;
+            font-size: 4.5vw;
             cursor: pointer;
         }
         @media (min-width: 768px) {
-            .date { font-size: 2.8rem; }
-            .sealed { font-size: 4rem; }
-            .next { font-size: 1.8rem; }
-            .launch { font-size: 3rem; }
+            .date { font-size: 3rem; }
+            .sealed { font-size: 4.5rem; }
+            .next { font-size: 2rem; }
+            .launch { font-size: 3.5rem; }
             .domain { font-size: 6rem; }
-            #countdown { font-size: 3rem; }
-            input[type="email"], button { font-size: 1.2rem; }
+            #countdown { font-size: 4rem; }
+            input, button { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="date">5 FEBRUARY 2026 – 20:00</div>
+    <div class="top-section">
+        <div class="date">5 FEBRUARY 2026 – 20:00</div>
 
-    <div class="sealed">001 – SEALED</div>
-    <div class="next">Next release: 002/10</div>
+        <div class="sealed">001 – SEALED</div>
+        <div class="next">Next release: 002/10</div>
 
-    <div class="launch">OFFICIAL WEBSITE<br>LAUNCHING SOON</div>
+        <div class="launch">OFFICIAL WEBSITE<br>LAUNCHING SOON</div>
 
-    <div class="domain">VAULTXRELICS.COM</div>
+        <div class="domain">Vault-X-Relics</div>
 
-    <div class="separator"></div>
+        <div class="separator"></div>
 
-    <div id="countdown">Loading...</div>
+        <div id="countdown">Loading...</div>
+    </div>
 
-    <form>
-        <input type="email" placeholder="Get notified on launch" required>
-        <button type="submit">NOTIFY ME</button>
-    </form>
+    <div class="form-section">
+        <form>
+            <input type="email" placeholder="Get notified on launch" required>
+            <button type="submit">NOTIFY ME</button>
+        </form>
+    </div>
 
     <script>
-        const launchDate = new Date('2026-02-05T20:00:00Z').getTime(); // UTC for consistency
+        const launchDate = new Date('2026-02-05T20:00:00Z').getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -122,17 +133,16 @@
                 return;
             }
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const days = Math.floor(distance / 86400000);
+            const hours = Math.floor((distance % 86400000) / 3600000);
+            const minutes = Math.floor((distance % 3600000) / 60000);
 
             document.getElementById('countdown').innerHTML = 
-                `${days} DAYS &nbsp;&nbsp; ${hours} HOURS &nbsp;&nbsp; ${minutes} MINUTES &nbsp;&nbsp; ${seconds} SECONDS`;
+                `${days} DAYS &nbsp;&nbsp;&nbsp; ${hours} HOURS &nbsp;&nbsp;&nbsp; ${minutes} MINUTES`;
         }
 
         updateCountdown();
-        setInterval(updateCountdown, 1000);
+        setInterval(updateCountdown, 60000); // Updates every minute
     </script>
 </body>
 </html>
