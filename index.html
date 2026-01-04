@@ -3,132 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault X Relics</title>
-    <meta name="description" content="Discover rare and vaulted relics from worlds beyond. Exclusive collectibles and artifacts.">
+    <title>VAULT X RELICS | 001 – SEALED</title>
     <style>
-        :root {
-            --bg: #0f0f17;
-            --accent: #8b5cf6;
-            --text: #e2e8f0;
-            --secondary: #64748b;
-        }
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://source.unsplash.com/random/1920x1080/?ancient,artifact,dark') no-repeat center/cover;
             height: 100vh;
+            background: #000;
+            color: #fff;
+            font-family: 'Courier New', monospace;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 20px;
+            overflow: hidden;
         }
         h1 {
-            font-size: 4rem;
-            margin: 0;
-            text-shadow: 0 0 20px var(--accent);
+            font-size: 3.5rem;
+            letter-spacing: 6px;
+            margin: 0 20px;
         }
-        h2 {
+        .date {
+            font-size: 2rem;
+            letter-spacing: 4px;
+            margin: 30px 0;
+        }
+        .status {
             font-size: 2.5rem;
-            text-align: center;
-            margin: 60px 0 30px;
+            margin: 20px 0;
         }
-        p {
-            max-width: 800px;
-            margin: 20px auto;
-            text-align: center;
-            color: var(--secondary);
+        .next {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            opacity: 0.8;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        .launch {
+            font-size: 1.8rem;
+            margin: 40px 0;
+            opacity: 0.9;
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .domain {
+            font-size: 4.5rem;
+            letter-spacing: 12px;
+            margin: 50px 0;
+            font-weight: bold;
+        }
+        hr {
+            width: 60%;
+            border: 1px solid #333;
             margin: 40px 0;
         }
-        .item {
-            background: #1e1e2f;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(139,92,246,0.2);
-            transition: transform 0.3s;
+        #countdown {
+            font-size: 2rem;
+            letter-spacing: 4px;
+            margin: 40px 0;
+            opacity: 0.9;
         }
-        .item:hover {
-            transform: translateY(-10px);
+        form {
+            margin: 50px 0;
         }
-        .item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
+        input[type="email"] {
+            padding: 12px 20px;
+            width: 320px;
+            max-width: 90%;
+            background: #111;
+            border: 1px solid #444;
+            color: #fff;
+            font-size: 1rem;
         }
-        .item-info {
-            padding: 20px;
-            text-align: center;
+        button {
+            padding: 12px 30px;
+            background: #222;
+            border: 1px solid #444;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
         }
-        footer {
-            background: #0a0a10;
-            padding: 40px 20px;
-            text-align: center;
-            color: var(--secondary);
-        }
-        a {
-            color: var(--accent);
-            text-decoration: none;
+        button:hover {
+            background: #444;
         }
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
+            h1 { font-size: 2.5rem; }
+            .domain { font-size: 3rem; letter-spacing: 8px; }
+            .date, #countdown { font-size: 1.5rem; }
+            .status { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Vault X Relics</h1>
-        <p>Unearth the rarest artifacts from forgotten vaults</p>
-    </header>
 
-    <section class="container">
-        <h2>About the Vault</h2>
-        <p>Welcome to Vault X Relics, your gateway to exclusive, vaulted, and legendary collectibles. From ancient artifacts to prime relics in gaming worlds like Warframe and Magic: The Gathering, we curate the most sought-after items for true collectors.</p>
+    <h1>VAULT X RELICS | 001 – SEALED</h1>
+    
+    <div class="date">5 FEBRUARY 2026 – 20:00</div>
+    
+    <div class="status">001 – SEALED</div>
+    <div class="next">Next release: 002/10</div>
+    
+    <div class="launch">OFFICIAL WEBSITE LAUNCHING SOON</div>
+    
+    <div class="domain">VAULTXRELICS.COM</div>
+    
+    <hr>
+    
+    <div id="countdown"></div>
+    
+    <form action="https://formspree.io/f/your-form-id" method="POST"> <!-- Replace with your Formspree/Mailchimp/etc endpoint -->
+        <input type="email" name="email" placeholder="Get notified on launch" required>
+        <button type="submit">NOTIFY ME</button>
+    </form>
+
+    <script>
+        const launchDate = new Date('2026-02-05T20:00:00').getTime();
         
-        <h2>Featured Relics</h2>
-        <div class="gallery">
-            <div class="item">
-                <img src="https://source.unsplash.com/random/600x400/?relic,ancient" alt="Ancient Relic">
-                <div class="item-info">
-                    <h3>Prime Vault Relic</h3>
-                    <p>Rare drop from unvaulted eras</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://source.unsplash.com/random/600x400/?artifact,magic" alt="MTG Artifact">
-                <div class="item-info">
-                    <h3>Mox Diamond</h3>
-                    <p>From the Vault: Relics Edition</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://source.unsplash.com/random/600x400/?treasure,vault" alt="Vault Treasure">
-                <div class="item-info">
-                    <h3>Memory Jar</h3>
-                    <p>Legendary power unleashed</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Vault X Relics. All rights reserved.</p>
-        <p>Contact: info@vaultxrelics.com | <a href="#">Discord</a> | <a href="#">Twitter/X</a></p>
-    </footer>
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+            
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "LAUNCHED";
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').innerHTML = 
+                `${days} DAYS ${hours} HOURS ${minutes} MINUTES ${seconds} SECONDS`;
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
