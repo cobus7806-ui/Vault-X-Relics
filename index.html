@@ -2,98 +2,131 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VAULT X RELICS | 001 – SEALED</title>
     <style>
-        body {
+        * {
             margin: 0;
-            padding: 20px;
-            min-height: 100vh;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
             background: #000;
             color: #fff;
             font-family: 'Times New Roman', Times, serif;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             text-align: center;
-            box-sizing: border-box;
+            padding: 20px;
+            line-height: 1.4;
         }
         .top-section {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            gap: 4vh;
         }
         .date {
-            font-size: 7vw;
-            letter-spacing: 1vw;
-            margin-bottom: 5vh;
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            letter-spacing: 0.8rem;
+            opacity: 0.9;
         }
         .sealed {
-            font-size: 9vw;
-            letter-spacing: 1vw;
-            margin: 5vh 0;
+            font-size: clamp(4rem, 10vw, 7rem);
+            letter-spacing: 1rem;
             font-weight: bold;
+            color: #c9a14f;
         }
         .next {
-            font-size: 4.5vw;
-            margin: 3vh 0;
-            opacity: 0.85;
+            font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+            opacity: 0.8;
         }
         .launch {
-            font-size: 6vw;
-            letter-spacing: 0.8vw;
-            margin: 8vh 0;
-            line-height: 1.4;
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            letter-spacing: 0.6rem;
+            margin: 6vh 0;
         }
         .domain {
-            font-size: 10vw; /* Slightly smaller to fit better on mobile */
-            letter-spacing: 1.5vw;
+            font-size: clamp(4rem, 12vw, 8rem);
             font-weight: bold;
-            margin: 10vh 0;
+            letter-spacing: 1.2rem;
+            color: #c9a14f;
         }
         .separator {
-            width: 60%;
+            width: 50%;
+            max-width: 400px;
             border-bottom: 1px solid #555;
-            margin: 10vh 0;
+            margin: 6vh auto;
         }
         #countdown {
-            font-size: 7vw;
-            letter-spacing: 1.2vw;
-            margin: 8vh 0;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            letter-spacing: 1rem;
+            margin: 6vh 0;
+        }
+        .drop-section {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #444;
+            padding: 4vh 6vw;
+            max-width: 700px;
+            margin: 4vh auto;
+            border-radius: 4px;
+        }
+        .drop-title {
+            color: #c9a14f;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 2vh;
+        }
+        .drop-info {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            opacity: 0.9;
+            line-height: 1.6;
         }
         .form-section {
             width: 100%;
-            padding: 5vh 0;
+            max-width: 500px;
+            margin: 6vh auto;
+            padding: 4vh 0;
         }
         input[type="email"] {
-            padding: 3vw 5vw;
-            width: 80%;
-            max-width: 400px;
+            width: 100%;
+            padding: 2vh 4vw;
             background: #111;
             border: 1px solid #555;
             color: #fff;
-            font-size: 4.5vw;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             text-align: center;
-            margin-bottom: 3vh;
+            margin-bottom: 2vh;
         }
         button {
-            padding: 3vw 10vw;
+            width: 100%;
+            padding: 2vh 6vw;
             background: #222;
             border: 1px solid #555;
-            color: #fff;
-            font-size: 4.5vw;
+            color: #c9a14f;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
             cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #333;
+            border-color: #c9a14f;
+        }
+        footer {
+            margin: 4vh 0;
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            opacity: 0.7;
+        }
+        footer a {
+            color: #c9a14f;
+            text-decoration: none;
         }
         @media (min-width: 768px) {
-            .date { font-size: 3rem; }
-            .sealed { font-size: 4.5rem; }
-            .next { font-size: 2rem; }
-            .launch { font-size: 3.5rem; }
-            .domain { font-size: 6rem; }
-            #countdown { font-size: 4rem; }
-            input, button { font-size: 1.5rem; }
+            body { padding: 40px; }
+            .separator { width: 30%; }
         }
     </style>
 </head>
@@ -103,26 +136,45 @@
         <div class="date">5 FEBRUARY 2026 – 20:00</div>
 
         <div class="sealed">001 – SEALED</div>
-        <div class="next">Next release: 002/10</div>
+        <div class="next">NEXT RELEASE: 002/10</div>
 
         <div class="launch">OFFICIAL WEBSITE<br>LAUNCHING SOON</div>
 
-        <div class="domain">Vault-X-Relics</div>
+        <div class="domain">VAULT X RELICS</div>
 
         <div class="separator"></div>
 
         <div id="countdown">Loading...</div>
     </div>
 
+    <!-- Tee Drop Teaser Section -->
+    <div class="drop-section">
+        <h2 class="drop-title">CURRENT DROP</h2>
+        <p class="drop-info">
+            Black Tee – Shattered X + Raven Wing Crack<br>
+            R750 | Numbered 001–200<br>
+            Sealed in matte black box<br>
+            Ships next week – No reprints<br>
+            SA shipping included<br>
+            International: + your courier fee (DHL/FedEx)<br>
+            DM @vaultxrelics to reserve your number<br>
+            Payment link live at 12:00 noon today
+        </p>
+    </div>
+
     <div class="form-section">
-        <form>
-            <input type="email" placeholder="Get notified on launch" required>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="email" name="email" placeholder="Get notified on launch" required>
             <button type="submit">NOTIFY ME</button>
         </form>
     </div>
 
+    <footer>
+        <a href="https://x.com/vaultxrelics">Follow on X</a>
+    </footer>
+
     <script>
-        const launchDate = new Date('2026-02-05T20:00:00Z').getTime();
+        const launchDate = new Date('2026-02-05T20:00:00+02:00').getTime(); // SAST timezone
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -135,14 +187,14 @@
 
             const days = Math.floor(distance / 86400000);
             const hours = Math.floor((distance % 86400000) / 3600000);
-            const minutes = Math.floor((distance % 3600000) / 60000);
+            const minutes = Math.floor((distance % 36000000) / 60000);
 
             document.getElementById('countdown').innerHTML = 
                 `${days} DAYS &nbsp;&nbsp;&nbsp; ${hours} HOURS &nbsp;&nbsp;&nbsp; ${minutes} MINUTES`;
         }
 
         updateCountdown();
-        setInterval(updateCountdown, 60000); // Updates every minute
+        setInterval(updateCountdown, 60000); // Update every minute
     </script>
 </body>
-</html>
+    </html>
