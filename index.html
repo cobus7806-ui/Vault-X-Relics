@@ -83,4 +83,128 @@
         .drop-info {
             font-size: clamp(1.2rem, 4vw, 1.8rem);
             opacity: 0.9;
-            line-height:
+            line-height: 1.6;
+        }
+        .tee-image {
+            max-width: 100%;
+            height: auto;
+            margin: 4vh auto;
+            border: 1px solid #444;
+            border-radius: 4px;
+            display: block;
+        }
+        .form-section {
+            width: 100%;
+            max-width: 500px;
+            margin: 6vh auto;
+            padding: 4vh 0;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 2vh 4vw;
+            background: #111;
+            border: 1px solid #555;
+            color: #fff;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            text-align: center;
+            margin-bottom: 2vh;
+        }
+        button {
+            width: 100%;
+            padding: 2vh 6vw;
+            background: #222;
+            border: 1px solid #555;
+            color: #c9a14f;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #333;
+            border-color: #c9a14f;
+        }
+        footer {
+            margin: 4vh 0;
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            opacity: 0.7;
+        }
+        footer a {
+            color: #c9a14f;
+            text-decoration: none;
+        }
+        @media (min-width: 768px) {
+            body { padding: 40px; }
+            .separator { width: 30%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-section">
+        <div class="date">5 FEBRUARY 2026 – 20:00</div>
+
+        <div class="sealed">001 – SEALED</div>
+        <div class="next">NEXT RELEASE: 002/10</div>
+
+        <div class="launch">OFFICIAL WEBSITE<br>LAUNCHING SOON</div>
+
+        <div class="domain">VAULT X RELICS</div>
+
+        <div class="separator"></div>
+
+        <div id="countdown">Loading...</div>
+    </div>
+
+    <!-- Tee Drop Teaser Section with Image -->
+    <div class="drop-section">
+        <h2 class="drop-title">CURRENT DROP</h2>
+        <p class="drop-info">
+            Black Tee – Shattered X + Raven Wing Crack<br>
+            R750 | Numbered 001–200<br>
+            Sealed in matte black box<br>
+            Ships next week – No reprints<br>
+            SA shipping included<br>
+            International: + your courier fee (DHL/FedEx)<br>
+            DM @vaultxrelics to reserve your number<br>
+            Payment link live at 2:00 PM today
+        </p>
+        <!-- Tee Mock-up Image (centered) -->
+        <img src="tee-mockup-1.jpg" alt="Vault X Relics Tee Mock-up" class="tee-image">
+    </div>
+
+    <div class="form-section">
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="email" name="email" placeholder="Get notified on launch" required>
+            <button type="submit">NOTIFY ME</button>
+        </form>
+    </div>
+
+    <footer>
+        <a href="https://x.com/vaultxrelics">Follow on X</a>
+    </footer>
+
+    <script>
+        const launchDate = new Date('2026-02-05T20:00:00+02:00').getTime(); // SAST timezone
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "LAUNCHED";
+                return;
+            }
+
+            const days = Math.floor(distance / 86400000);
+            const hours = Math.floor((distance % 86400000) / 3600000);
+            const minutes = Math.floor((distance % 36000000) / 60000);
+
+            document.getElementById('countdown').innerHTML = 
+                `${days} DAYS &nbsp;&nbsp;&nbsp; ${hours} HOURS &nbsp;&nbsp;&nbsp; ${minutes} MINUTES`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+    </script>
+</body>
+    </html>
