@@ -44,6 +44,29 @@
     .content.visible {
       opacity:1;
     }
+    .play-btn {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      z-index:4;
+      background:rgba(0,0,0,0.6);
+      color:#ffd700;
+      border:none;
+      border-radius:50%;
+      width:100px;
+      height:100px;
+      font-size:3rem;
+      cursor:pointer;
+      opacity:0.8;
+      transition:opacity 0.3s;
+    }
+    .play-btn:hover {
+      opacity:1;
+    }
+    .play-btn.hidden {
+      display:none;
+    }
     h1 {
       font-size:3.8rem;
       letter-spacing:6px;
@@ -80,22 +103,26 @@
       .price { font-size:2.2rem; }
       p { font-size:1.2rem; }
       .dm { font-size:1.6rem; }
+      .play-btn { width:80px; height:80px; font-size:2.5rem; }
     }
   </style>
 </head>
 <body>
 
   <!-- Video background -->
-  <video id="video-bg" autoplay muted playsinline>
-    <source src="raven-drop.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <div id="video-container">
+    <video id="video-bg" autoplay muted playsinline>
+      <source src="raven-drop.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <button id="play-sound" class="play-btn">▶</button>
+    <div class="overlay"></div>
+  </div>
 
-  <!-- Fallback image if video fails -->
+  <!-- Fallback image -->
   <img id="fallback-img" src="raven-fallback.jpg" alt="Raven Breakthrough tee">
 
-  <div class="overlay"></div>
-
+  <!-- Main content -->
   <div class="content">
     <h1>Vault X Relics</h1>
     <p>Raven Breakthrough tee</p>
@@ -114,27 +141,39 @@
   </div>
 
   <script>
+    const videoContainer = document.getElementById('video-container');
     const video = document.getElementById('video-bg');
     const content = document.querySelector('.content');
     const fallback = document.getElementById('fallback-img');
+    const playBtn = document.getElementById('play-sound');
 
-    // Show content EXACTLY when video ends
-    video.onended = function() {
+    // When video ends: hide video + button, show content
+    video.onended = () => {
+      videoContainer.style.display = 'none';
       content.classList.add('visible');
     };
 
-    // If video fails to load/play (wrong format, too big, network issue)
-    video.onerror = function() {
+    // If video fails
+    video.onerror = () => {
+      videoContainer.style.display = 'none';
       fallback.style.display = 'block';
-      content.classList.add('visible'); // show text anyway
+      content.classList.add('visible');
     };
 
-    // Safety: if video doesn't end after 30 seconds (e.g., loop issue), force show
+    // Unmute & play with sound when user clicks button
+    playBtn.onclick = () => {
+      video.muted = false;
+      video.play(); // restart if needed
+      playBtn.classList.add('hidden');
+    };
+
+    // Auto-show content if video doesn't end (safety)
     setTimeout(() => {
       if (!content.classList.contains('visible')) {
+        videoContainer.style.display = 'none';
         content.classList.add('visible');
       }
-    }, 30000); // 30 seconds max
+    }, 30000); // 30s max
   </script>
 
 </body>
