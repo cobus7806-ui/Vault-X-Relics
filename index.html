@@ -20,7 +20,7 @@
       object-fit:cover;
       z-index:1;
     }
-    #fallback-img { display:none; } /* hidden unless video fails */
+    #fallback-img { display:none; }
     .overlay {
       position:absolute;
       inset:0;
@@ -88,6 +88,7 @@
   <!-- Video background -->
   <video id="video-bg" autoplay muted playsinline>
     <source src="raven-drop.mp4" type="video/mp4">
+    Your browser does not support the video tag.
   </video>
 
   <!-- Fallback image if video fails -->
@@ -117,24 +118,24 @@
     const content = document.querySelector('.content');
     const fallback = document.getElementById('fallback-img');
 
-    // Show content 1 second after video ends
-    video.onended = () => {
+    // Show content EXACTLY when video ends
+    video.onended = function() {
       content.classList.add('visible');
     };
 
-    // If video fails to load/play (e.g., too big or format issue)
-    video.onerror = () => {
+    // If video fails to load/play (wrong format, too big, network issue)
+    video.onerror = function() {
       fallback.style.display = 'block';
       content.classList.add('visible'); // show text anyway
     };
 
-    // Fallback timer in case video doesn't fire 'ended' (e.g., loop or error)
+    // Safety: if video doesn't end after 30 seconds (e.g., loop issue), force show
     setTimeout(() => {
       if (!content.classList.contains('visible')) {
         content.classList.add('visible');
       }
-    }, 10000); // 10 seconds max wait
+    }, 30000); // 30 seconds max
   </script>
 
 </body>
-</html>
+  </html>
