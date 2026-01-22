@@ -34,76 +34,54 @@
       z-index:3;
       display:flex;
       flex-direction:column;
-      justify-content:center;
+      justify-content:flex-start;
       align-items:center;
-      padding:2rem;
+      padding:4rem 2rem 2rem;
       text-align:center;
       opacity:0;
       transition:opacity 1.5s ease;
+      background:#000; /* fallback */
     }
     .content.visible {
       opacity:1;
     }
-    .play-btn {
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      z-index:4;
-      background:rgba(0,0,0,0.6);
-      color:#ffd700;
-      border:none;
-      border-radius:50%;
-      width:100px;
-      height:100px;
-      font-size:3rem;
-      cursor:pointer;
-      opacity:0.8;
-      transition:opacity 0.3s;
-    }
-    .play-btn:hover {
-      opacity:1;
-    }
-    .play-btn.hidden {
-      display:none;
-    }
     h1 {
       font-size:3.8rem;
       letter-spacing:6px;
-      margin-bottom:1.5rem;
+      margin-bottom:1rem;
       text-shadow:0 0 30px rgba(255,215,0,0.6);
     }
     p {
       font-size:1.5rem;
       max-width:800px;
       line-height:1.6;
-      margin-bottom:2rem;
+      margin-bottom:1.5rem;
     }
     .price {
       font-size:2.8rem;
       font-weight:bold;
       color:#ffd700;
-      margin:1.5rem 0;
+      margin:1rem 0;
       text-shadow:0 0 20px rgba(255,215,0,0.5);
     }
     .small {
       font-size:1.3rem;
       color:#ccc;
-      margin-top:1rem;
+      margin-top:0.5rem;
     }
     .dm {
       font-size:2rem;
-      margin-top:3rem;
+      margin-top:2rem;
       color:#fff;
       text-decoration:underline;
       text-shadow:0 0 15px #000;
     }
     @media (max-width:768px) {
-      h1 { font-size:2.8rem; letter-spacing:4px; }
+      h1 { font-size:2.8rem; letter-spacing:4px; margin-top:2rem; }
       .price { font-size:2.2rem; }
       p { font-size:1.2rem; }
       .dm { font-size:1.6rem; }
-      .play-btn { width:80px; height:80px; font-size:2.5rem; }
+      .content { padding:6rem 1.5rem 2rem; }
     }
   </style>
 </head>
@@ -115,7 +93,6 @@
       <source src="raven-drop.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <button id="play-sound" class="play-btn">▶</button>
     <div class="overlay"></div>
   </div>
 
@@ -135,7 +112,7 @@
     <p class="dm">DM me now for bank details</p>
     <p class="small">First come, first served • Ends Monday midnight</p>
 
-    <p style="margin-top:2.5rem; font-style:italic; font-size:1.4rem;">
+    <p style="margin-top:2rem; font-style:italic; font-size:1.4rem;">
       The relic is the silence between the crack and the light.
     </p>
   </div>
@@ -145,9 +122,8 @@
     const video = document.getElementById('video-bg');
     const content = document.querySelector('.content');
     const fallback = document.getElementById('fallback-img');
-    const playBtn = document.getElementById('play-sound');
 
-    // When video ends: hide video + button, show content
+    // When video ENDS: hide video, show content
     video.onended = () => {
       videoContainer.style.display = 'none';
       content.classList.add('visible');
@@ -160,20 +136,13 @@
       content.classList.add('visible');
     };
 
-    // Unmute & play with sound when user clicks button
-    playBtn.onclick = () => {
-      video.muted = false;
-      video.play(); // restart if needed
-      playBtn.classList.add('hidden');
-    };
-
-    // Auto-show content if video doesn't end (safety)
+    // Safety fallback: show after 35 seconds if video never ends (long video or loop issue)
     setTimeout(() => {
       if (!content.classList.contains('visible')) {
         videoContainer.style.display = 'none';
         content.classList.add('visible');
       }
-    }, 30000); // 30s max
+    }, 35000); // 35 seconds max
   </script>
 
 </body>
