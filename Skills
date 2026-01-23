@@ -1,0 +1,5 @@
+# List all available skills in this repository
+npx add-skill google-labs-code/stitch-skills --list
+
+# Install a specific skill (e.g., Stitch to React Components)
+npx add-skill google-labs-code/stitch-skills --skill react:components --global
