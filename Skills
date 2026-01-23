@@ -3,3 +3,8 @@ npx add-skill google-labs-code/stitch-skills --list
 
 # Install a specific skill (e.g., Stitch to React Components)
 npx add-skill google-labs-code/stitch-skills --skill react:components --global
+skills/[category]/
+├── SKILL.md           — The "Mission Control" for the agent
+├── scripts/           — Executable enforcers (Validation & Networking)
+├── resources/         — The knowledge base (Checklists & Style Guides)
+└── examples/          — The "Gold Standard" syntactically valid references
