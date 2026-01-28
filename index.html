@@ -3,20 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Vault X Relics</title>
+    <title>Vault X Relics</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to bottom, #8E8E8E, #5A5A5A); color: #FFFFFF; text-align: center; min-height: 100vh; }
-        header { padding: 30px 20px; }
-        .logo { max-width: 250px; height: auto; }
-        nav a { color: #FFFFFF; text-decoration: none; margin: 0 20px; font-size: 1.1em; }
-        nav a:hover { text-decoration: underline; }
-        .section { padding: 80px 20px; max-width: 900px; margin: 0 auto; }
-        h1 { font-size: 3em; font-weight: 700; }
-        p { font-size: 1.2em; }
-        footer { padding: 40px 20px; font-size: 0.9em; }
-        footer a { color: #FFFFFF; margin: 0 15px; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #8E8E8E, #5A5A5A);
+            color: #FFFFFF;
+            text-align: center;
+            min-height: 100vh;
+        }
+        header {
+            padding: 30px 20px;
+        }
+        .logo {
+            max-width: 300px;
+            height: auto;
+            filter: drop-shadow(0 4px 12px rgba(255,255,255,0.3));
+        }
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            padding: 60px 20px;
+        }
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        video, img {
+            max-width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .teaser {
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            margin: 40px auto;
+            padding: 60px 20px;
+        }
+        footer {
+            padding: 40px 20px;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #FFFFFF;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+        }
     </style>
 </head>
 <body>
@@ -30,11 +83,20 @@
         </nav>
     </header>
 
-    <section class="section">
-        <h1>Contact</h1>
-        <p>Email: ckb@vaultxrelics.com</p>
-        <p>WhatsApp: +27 81 864 9619</p>
-        <p>Gansbaai, South Africa</p>
+    <section class="hero">
+        <h1>Raven Breakthrough</h1>
+        <video src="raven-drop.mp4" autoplay loop muted playsinline></video>
+        <p>Limited 198/200 left • R550 Delivered SA • Sealed black box</p>
+        <p>The relic is the silence between the crack and the light.</p>
+        <a href="shop.html" style="color: #FFFFFF; font-size: 1.3em; text-decoration: underline;">Shop Now</a>
+    </section>
+
+    <section class="section teaser">
+        <h2>Coming Soon: 4x4 Enthusiasts</h2>
+        <img src="4x4-compass.jpg" alt="4x4 Enthusiasts Teaser">
+        <p>Compass & peaks. Silent trails. Cream tee. Black print.</p>
+        <p>Numbered drop. First 50 reserved early. Stay tuned.</p>
+        <a href="contact.html" style="color: #FFFFFF; font-size: 1.1em; text-decoration: underline;">Get notified</a>
     </section>
 
     <footer>
