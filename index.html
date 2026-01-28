@@ -6,20 +6,85 @@
     <title>Vault X Relics</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to bottom, #8E8E8E, #5A5A5A); color: #FFFFFF; text-align: center; min-height: 100vh; }
-        header { padding: 30px 20px; }
-        .logo { max-width: 400px; height: auto; filter: drop-shadow(0 4px 12px rgba(255,255,255,0.3)); }/* bigger logo as requested */
-        nav a { color: #FFFFFF; text-decoration: none; margin: 0 20px; font-size: 1.1em; }
-        nav a:hover { text-decoration: underline; }
-        .hero { padding: 60px 20px; }
-        h1 { font-size: 3em; font-weight: 700; margin: 20px 0; }
-        video, img { max-width: 90%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
-        .teaser { background: rgba(0,0,0,0.3); border-radius: 12px; margin: 40px auto; padding: 60px 20px; }
-        footer { padding: 40px 20px; font-size: 0.9em; }
-        footer a { color: #FFFFFF; margin: 0 15px; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-        @media (max-width: 768px) { h1 { font-size: 2.2em; } .logo { max-width: 250px; } }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #8E8E8E, #5A5A5A);
+            color: #FFFFFF;
+            text-align: center;
+            min-height: 100vh;
+        }
+        header {
+            padding: 0;
+            background: #000000;
+            position: relative;
+        }
+        .logo {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(1.1) drop-shadow(0 10px 30px rgba(255,255,255,0.4));
+        }
+        nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.5);
+            padding: 10px 30px;
+            border-radius: 30px;
+        }
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            padding: 60px 20px;
+        }
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        video, img {
+            max-width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .teaser {
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            margin: 40px auto;
+            padding: 60px 20px;
+        }
+        footer {
+            padding: 40px 20px;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #FFFFFF;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            nav { padding: 8px 20px; }
+            nav a { margin: 0 10px; font-size: 1em; }
+        }
     </style>
 </head>
 <body>
@@ -58,4 +123,4 @@
         </div>
     </footer>
 </body>
-</html>
+    </html>
