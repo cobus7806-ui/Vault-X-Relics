@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Vault X Relics</title>
+    <title>Vault X Relics</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -15,9 +15,26 @@
             min-height: 100vh;
         }
         header {
-            padding: 30px 20px;
+            padding: 0;
+            background: #000000;
+            position: relative;
         }
-        .logo { max-width: 400px; height: auto; filter: drop-shadow(0 4px 12px rgba(255,255,255,0.3)); }/* bigger logo as requested */
+        .logo {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            filter: brightness(1.1) drop-shadow(0 10px 30px rgba(255,255,255,0.4));
+        }
+        nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.5);
+            padding: 10px 30px;
+            border-radius: 30px;
+        }
         nav a {
             color: #FFFFFF;
             text-decoration: none;
@@ -27,30 +44,29 @@
         nav a:hover {
             text-decoration: underline;
         }
-        .section {
-            padding: 80px 20px;
-            max-width: 900px;
-            margin: 0 auto;
+        .hero {
+            padding: 60px 20px;
         }
         h1 {
             font-size: 3em;
             font-weight: 700;
             margin: 20px 0;
         }
-        p, .story {
-            font-size: 1.2em;
-            line-height: 1.6;
-            text-align: left;
+        video, img {
+            max-width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        .story {
+        .section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .teaser {
             background: rgba(0,0,0,0.3);
             border-radius: 12px;
-            padding: 40px;
             margin: 40px auto;
-            max-width: 800px;
-        }
-        .story br {
-            margin-bottom: 10px;
+            padding: 60px 20px;
         }
         footer {
             padding: 40px 20px;
@@ -66,7 +82,8 @@
         }
         @media (max-width: 768px) {
             h1 { font-size: 2.2em; }
-            .story { padding: 30px 20px; }
+            nav { padding: 8px 20px; }
+            nav a { margin: 0 10px; font-size: 1em; }
         }
     </style>
 </head>
@@ -81,40 +98,20 @@
         </nav>
     </header>
 
-    <section class="section">
-        <h1>About Vault X Relics</h1>
-        <p>Started 15 December 2025 in Gansbaai, South Africa.</p>
-        <p>Limited-edition relics. Numbered. No reprints.</p>
+    <section class="hero">
+        <h1>Raven Breakthrough</h1>
+        <video src="raven-drop.mp4" autoplay loop muted playsinline></video>
+        <p>Limited 198/200 left • R550 Delivered SA • Sealed black box</p>
+        <p>The relic is the silence between the crack and the light.</p>
+        <a href="shop.html" style="color: #FFFFFF; font-size: 1.3em; text-decoration: underline;">Shop Now</a>
+    </section>
 
-        <div class="story">
-            It started with one painting.<br><br>
-            A blue beast drawn in the dark when pain was louder than words.<br>
-            No plan. No name. Just ink, wood, and 47 years of silence.<br><br>
-            That painting became relic 001/001.<br>
-            One shirt. One key. One NFT.<br>
-            Sold for R5,000 before the vault had a name.<br><br>
-            The buyer doesn't matter.<br>
-            The sale did.<br>
-            It proved someone else saw the beast too.<br><br>
-            Now the vault is open.<br><br>
-            10 relics.<br>
-            10 units each.<br>
-            10 NFTs.<br>
-            No reprints. Ever.<br><br>
-            Collect all ten relics and all ten keys from one cycle —<br>
-            you own the original canvas forever.<br>
-            Release – November 2026.<br>
-            One owner.<br><br>
-            001/10 launches 20 December 2025 – 18:00 UTC.<br>
-            001/001 is gone.<br>
-            The rest is up to you.<br><br>
-            No second chances.<br>
-            Only first ones.
-        </div>
-
-        <p>Email: ckb@vaultxrelics.com</p>
-        <p>WhatsApp: +27 81 864 9619</p>
-        <p>Gansbaai, South Africa</p>
+    <section class="section teaser">
+        <h2>Coming Soon: 4x4 Enthusiasts</h2>
+        <img src="4x4-compass.jpg" alt="4x4 Enthusiasts Teaser">
+        <p>Compass & peaks. Silent trails. Cream tee. Black print.</p>
+        <p>Numbered drop. First 50 reserved early. Stay tuned.</p>
+        <a href="contact.html" style="color: #FFFFFF; font-size: 1.1em; text-decoration: underline;">Get notified</a>
     </section>
 
     <footer>
