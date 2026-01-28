@@ -1,4 +1,4 @@
-y<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +7,9 @@ y<!DOCTYPE html>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to bottom, #8E8E8E, #5A5A5A); color: #FFFFFF; text-align: center; min-height: 100vh; }
-        header { padding: 30px 20px; }
-        .logo { max-width: 400px; height: auto; filter: drop-shadow(0 4px 12px rgba(255,255,255,0.3)); }/* bigger logo as requested */
+        header { padding: 0; background: #000000; }
+        .logo { width: 100%; max-width: 100%; height: auto; display: block; filter: brightness(1.1) drop-shadow(0 10px 30px rgba(255,255,255,0.4)); }
+        nav { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.5); padding: 10px 30px; border-radius: 30px; }
         nav a { color: #FFFFFF; text-decoration: none; margin: 0 20px; font-size: 1.1em; }
         nav a:hover { text-decoration: underline; }
         .section { padding: 80px 20px; max-width: 900px; margin: 0 auto; }
@@ -18,6 +19,7 @@ y<!DOCTYPE html>
         footer { padding: 40px 20px; font-size: 0.9em; }
         footer a { color: #FFFFFF; margin: 0 15px; text-decoration: none; }
         footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { h1 { font-size: 2.2em; } nav { padding: 8px 20px; } nav a { margin: 0 10px; font-size: 1em; } }
     </style>
 </head>
 <body>
@@ -36,15 +38,11 @@ y<!DOCTYPE html>
         
         <h2>Raven Breakthrough</h2>
         <img src="vxr-front.jpg" alt="Raven Breakthrough Tee">
-        <p>Limited 198/200 • R550 Delivered SA</p>
+        <p>Limited 198/200 • R550 Delivered SA • Sealed black box</p>
         <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20to%20buy%20Raven%20Breakthrough%20Tee%20(R550).%20Please%20send%20Yoco%20link." class="button">
-            Request Payment Link
+            Request Payment Link via WhatsApp
         </a>
-        <p>After payment, WhatsApp size (S–XXL) + proof.</p>
-
-        <h2 style="margin-top: 80px;">Shattered Glass (Printed)</h2>
-        <img src="Shattered-glass.jpg" alt="Shattered Glass Relic">
-        <p>Printed & ready. Contact for details.</p>
+        <p>After payment, WhatsApp size (S–XXL) + proof to reserve number.</p>
     </section>
 
     <footer>
@@ -56,4 +54,4 @@ y<!DOCTYPE html>
         </div>
     </footer>
 </body>
-                </html>
+</html>
