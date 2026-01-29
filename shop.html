@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +9,24 @@
     <style>
         body { margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to bottom, #8E8E8E, #5A5A5A); color: #FFFFFF; text-align: center; min-height: 100vh; }
         header { padding: 20px 0; background: #000000; text-align: center; }
-        .logo { max-width: 300px; height: auto; display: block; margin: 0 auto; filter: brightness(1.1) drop-shadow(0 10px 30px rgba(255,255,255,0.4)); }
+        .logo { max-width: 400px; height: auto; display: block; margin: 0 auto; filter: brightness(1.1) drop-shadow(0 10px 30px rgba(255,255,255,0.4)); }
         nav { margin: 20px auto; padding: 15px 30px; background: rgba(0,0,0,0.5); border-radius: 30px; display: inline-block; }
         nav a { color: #FFFFFF; text-decoration: none; margin: 0 20px; font-size: 1.1em; }
         nav a:hover { text-decoration: underline; }
-        .section { padding: 80px 20px; max-width: 900px; margin: 0 auto; }
-        h1 { font-size: 3em; font-weight: 700; }
-        img { max-width: 400px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .button { display: inline-block; background: #FFFFFF; color: #000000; padding: 15px 40px; font-size: 1.2em; text-decoration: none; border-radius: 8px; margin: 20px 0; font-weight: 700; }
-        footer { padding: 40px 20px; font-size: 0.9em; }
+        .section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
+        h1 { font-size: 3em; font-weight: 700; margin: 20px 0; }
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .product { background: rgba(0,0,0,0.4); border-radius: 12px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .product img { max-width: 100%; border-radius: 8px; margin-bottom: 15px; }
+        .price { font-size: 1.6em; font-weight: bold; color: #FFD700; margin: 10px 0; }
+        .discount { font-size: 1.1em; color: #FFD700; margin: 5px 0; }
+        .auth { font-size: 1em; color: #AAAAAA; margin: 10px 0; }
+        .button { display: inline-block; background: #FFFFFF; color: #000000; padding: 12px 30px; font-size: 1.1em; text-decoration: none; border-radius: 8px; margin: 15px 0; font-weight: 700; }
+        .button:hover { background: #EEEEEE; }
+        footer { padding: 40px 20px; font-size: 0.9em; background: rgba(0,0,0,0.3); }
         footer a { color: #FFFFFF; margin: 0 15px; text-decoration: none; }
         footer a:hover { text-decoration: underline; }
-        @media (max-width: 768px) { h1 { font-size: 2.2em; } .logo { max-width: 250px; } nav { padding: 10px 20px; } nav a { margin: 0 10px; font-size: 1em; } }
+        @media (max-width: 768px) { h1 { font-size: 2.2em; } .logo { max-width: 300px; } nav { padding: 10px 20px; } nav a { margin: 0 10px; font-size: 1em; } }
     </style>
 </head>
 <body>
@@ -34,15 +41,78 @@
     </header>
 
     <section class="section">
-        <h1>Shop</h1>
-        
-        <h2>Raven Breakthrough</h2>
-        <img src="vxr-front.jpg" alt="Raven Breakthrough Tee">
-        <p>Limited 198/200 • R550 Delivered SA • Sealed black box</p>
-        <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20to%20buy%20Raven%20Breakthrough%20Tee%20(R550).%20Please%20send%20Yoco%20link." class="button">
-            Request Payment Link via WhatsApp
-        </a>
-        <p>After payment, WhatsApp size (S–XXL) + proof to reserve number.</p>
+        <h1>Shop - Raven Fracture Drop</h1>
+        <p style="font-size: 1.3em; margin-bottom: 20px;">200 total across all 6 variants • R550 per tee (delivered SA, sealed black box) • Numbered • No reprints</p>
+        <p style="font-weight: bold; color: #FFD700; font-size: 1.2em;">Buy 2 or more → R50 off each additional tee</p>
+        <p style="color: #FFD700; font-size: 1.1em; margin-bottom: 40px;">Every tee includes hand-numbered Certificate of Authenticity sticker</p>
+
+        <div class="products">
+            <!-- 1. Original Black (full-color/gold cracks) -->
+            <div class="product">
+                <img src="original-black.jpg" alt="Obsidian Rupture">
+                <h2>Obsidian Rupture</h2>
+                <p>Black tee with full-color raven + gold cracks</p>
+                <div class="price">R550</div>
+                <p class="discount">Buy 2+ → R50 off each extra</p>
+                <p class="auth">Includes hand-numbered Authenticity sticker</p>
+                <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Obsidian%20Rupture%20(Black%20tee)%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
+            </div>
+
+            <!-- 2. White + Black Ink -->
+            <div class="product">
+                <img src="white-black.jpg" alt="Ivory Carve">
+                <h2>Ivory Carve</h2>
+                <p>White tee with bold black ink raven</p>
+                <div class="price">R550</div>
+                <p class="discount">Buy 2+ → R50 off each extra</p>
+                <p class="auth">Includes hand-numbered Authenticity sticker</p>
+                <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Ivory%20Carve%20(White%20tee%20black%20ink)%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
+            </div>
+
+            <!-- 3. White + Gray Ink -->
+            <div class="product">
+                <img src="white-gray.jpg" alt="Ash Relic">
+                <h2>Ash Relic</h2>
+                <p>White tee with soft gray ink raven</p>
+                <div class="price">R550</div>
+                <p class="discount">Buy 2+ → R50 off each extra</p>
+                <p class="auth">Includes hand-numbered Authenticity sticker</p>
+                <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Ash%20Relic%20(White%20tee%20gray%20ink)%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
+            </div>
+
+            <!-- 4. Dark Gray + Black Ink -->
+            <div class="product">
+                <img src="dark-gray-black.jpg" alt="Shadow Cross">
+                <h2>Shadow Cross</h2>
+                <p>Dark gray tee with matte black ink raven</p>
+                <div class="price">R550</div>
+                <p class="discount">Buy 2+ → R50 off each extra</p>
+                <p class="auth">Includes hand-numbered Authenticity sticker</p>
+                <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Shadow%20Cross%20(Dark%20gray%20tee)%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
+            </div>
+
+            <!-- 5. Textured Variant -->
+            <div class="product">
+                <img src="textured-variant.jpg" alt="Vault Echo">
+                <h2>Vault Echo</h2>
+                <p>Textured/cracked background with black ink raven</p>
+                <div class="price">R550</div>
+                <p class="discount">Buy 2+ → R50 off each extra</p>
+                <p class="auth">Includes hand-numbered Authenticity sticker</p>
+                <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Vault%20Echo%20(Textured%20tee)%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
+            </div>
+
+            <!-- 6. 6th Variant (add your photo/description) -->
+            <div class="product">
+                <img src="sixth-variant.jpg" alt="Silent Fracture">
+                <h2>Silent Fracture</h2>
+                <p>Additional variant (your 6th color/base)</p>
+                <div class="price">R550</div>
+                <p class="discount">Buy 2+ → R50 off each extra</p>
+                <p class="auth">Includes hand-numbered Authenticity sticker</p>
+                <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Silent%20Fracture%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -55,3 +125,4 @@
     </footer>
 </body>
 </html>
+```
