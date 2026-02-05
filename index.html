@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +13,18 @@
         nav { margin: 20px auto; padding: 15px 30px; background: rgba(0,0,0,0.5); border-radius: 30px; display: inline-block; }
         nav a { color: #FFFFFF; text-decoration: none; margin: 0 20px; font-size: 1.1em; }
         nav a:hover { text-decoration: underline; }
-        .hero { padding: 60px 20px; }
-        h1 { font-size: 3em; font-weight: 700; margin: 20px 0; }
+        .hero, .product-section { padding: 60px 20px; }
+        h1, h2 { font-weight: 700; margin: 20px 0; }
+        h1 { font-size: 3em; }
+        h2 { font-size: 2.5em; }
         video, img { max-width: 90%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
         .teaser { background: rgba(0,0,0,0.3); border-radius: 12px; margin: 40px auto; padding: 60px 20px; }
+        .promo-banner { background: #333; color: #FFF; padding: 20px; font-size: 1.5em; font-weight: bold; margin: 20px auto; max-width: 800px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
         footer { padding: 40px 20px; font-size: 0.9em; }
         footer a { color: #FFFFFF; margin: 0 15px; text-decoration: none; }
         footer a:hover { text-decoration: underline; }
-        @media (max-width: 768px) { h1 { font-size: 2.2em; } .logo { max-width: 300px; } nav { padding: 10px 20px; } nav a { margin: 0 10px; font-size: 1em; } }
+        @media (max-width: 768px) { h1 { font-size: 2.2em; } h2 { font-size: 2em; } .logo { max-width: 300px; } nav { padding: 10px 20px; } nav a { margin: 0 10px; font-size: 1em; } }
     </style>
 </head>
 <body>
@@ -34,11 +38,31 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <div class="promo-banner">
+        Special Offer: Buy any 2 or more items and get R50 off per item!
+    </div>
+
+    <section class="hero product-section">
         <h1>Raven Breakthrough</h1>
         <video src="raven-drop.mp4" autoplay loop muted playsinline></video>
         <p>Limited 198/200 left • R550 Delivered SA • Sealed black box</p>
         <p>The relic is the silence between the crack and the light.</p>
+        <a href="shop.html" style="color: #FFFFFF; font-size: 1.3em; text-decoration: underline;">Shop Now</a>
+    </section>
+
+    <section class="product-section">
+        <h2>Navy Blue Relic</h2>
+        <img src="navy-blue.jpg" alt="Navy Blue Relic Shirt"> <!-- Upload your navy blue image to the repo and reference it here -->
+        <p>Limited edition • R550 Delivered SA • Sealed black box</p>
+        <p>Deep navy hues meet mythic silence. Premium cotton, subtle print.</p>
+        <a href="shop.html" style="color: #FFFFFF; font-size: 1.3em; text-decoration: underline;">Shop Now</a>
+    </section>
+
+    <section class="product-section">
+        <h2>Red Relic</h2>
+        <img src="red-shirt.jpg" alt="Red Relic Shirt"> <!-- Upload your red shirt image to the repo and reference it here -->
+        <p>Limited edition • R550 Delivered SA • Sealed black box</p>
+        <p>Bold red fire with raven mystique. Heavy cotton, eternal edge.</p>
         <a href="shop.html" style="color: #FFFFFF; font-size: 1.3em; text-decoration: underline;">Shop Now</a>
     </section>
 
@@ -48,6 +72,55 @@
         <p>Compass & peaks. Silent trails. Cream tee. Black print.</p>
         <p>Numbered drop. First 50 reserved early. Stay tuned.</p>
         <a href="contact.html" style="color: #FFFFFF; font-size: 1.1em; text-decoration: underline;">Get notified</a>
+    </section>
+
+    <section class="section" id="roadmap">
+        <h2 style="font-size: 3em; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 5px; color: #ccc;">The Vault Roadmap</h2>
+        
+        <p style="font-size: 1.5em; max-width: 900px; margin: 0 auto 60px; line-height: 1.6; opacity: 0.9;">
+            The raven walks before it flies.<br>
+            Phase 1 builds the legs — silent, limited, real demand.<br>
+            Premium relics await alignment.
+        </p>
+
+        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; text-align: left;">
+            <!-- Phase 1 -->
+            <div style="background: #111; border: 1px solid #333; padding: 40px; border-radius: 8px;">
+                <h3 style="font-size: 2em; color: #aaa; margin-bottom: 20px;">Phase 1: Foundation (Active Now)</h3>
+                <ul style="font-size: 1.2em; line-height: 1.8; list-style: none; padding: 0;">
+                    <li>• Entry-level relics: R550–R750 tees + sealed black boxes</li>
+                    <li>• Limited runs: 200 units per variant, 6 variants total</li>
+                    <li>• Current drop: Raven Breakthrough – <strong>198/200 left</strong></li>
+                    <li>• Purpose: Test demand, fix logistics, strengthen the legs — zero ads, pure silence</li>
+                </ul>
+            </div>
+
+            <!-- Phase 2 -->
+            <div style="background: #111; border: 1px solid #444; padding: 40px; border-radius: 8px; opacity: 0.85;">
+                <h3 style="font-size: 2em; color: #aaa; margin-bottom: 20px;">Phase 2: Premium Relics (Funding to Complete & Ship)</h3>
+                <ul style="font-size: 1.2em; line-height: 1.8; list-style: none; padding: 0;">
+                    <li>• Shattered Glass series (10 relics) – Production near-complete</li>
+                    <li>• R7,500 each: 220g premium tee + 9g solid steel key + 1-of-1 NFT twin + laser-etched vault box</li>
+                    <li>• Quiet seeding to global icons/celebs — mythic fitness + blockchain rarity</li>
+                    <li>• On hold for final push — strategic partners welcome</li>
+                </ul>
+            </div>
+
+            <!-- Phase 3 -->
+            <div style="background: #111; border: 1px solid #333; padding: 40px; border-radius: 8px;">
+                <h3 style="font-size: 2em; color: #aaa; margin-bottom: 20px;">Phase 3: Ascent (Late Q1 / Q2 2026+)</h3>
+                <ul style="font-size: 1.2em; line-height: 1.8; list-style: none; padding: 0;">
+                    <li>• Iron Mask series & ongoing monthly drops: 10 numbered relics forever limited</li>
+                    <li>• Scale with organic demand once seeded</li>
+                </ul>
+            </div>
+        </div>
+
+        <p style="margin-top: 80px; font-size: 1.3em; opacity: 0.8;">
+            The silence is the relic.<br>
+            Inquire for premium access or alignment: <a href="mailto:ckb@vaultxrelics.com" style="color: #aaa; text-decoration: none;">ckb@vaultxrelics.com</a><br>
+            Or DM on IG: <a href="https://instagram.com/vault_x_relics" style="color: #aaa; text-decoration: none;">@vault_x_relics</a>
+        </p>
     </section>
 
     <footer>
@@ -60,3 +133,4 @@
     </footer>
 </body>
 </html>
+```
