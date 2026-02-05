@@ -15,13 +15,13 @@
         .section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
         h1 { font-size: 3em; font-weight: 700; margin: 20px 0; }
         .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .product { background: rgba(0,0,0,0.4); border-radius: 12px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .product { background: rgba(0,0,0,0.2); border-radius: 12px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); } /* Lightened background for better image pop */
         .product img { max-width: 100%; border-radius: 8px; margin-bottom: 15px; }
         .price { font-size: 1.6em; font-weight: bold; color: #FFD700; margin: 10px 0; }
-        .discount { font-size: 1.1em; color: #FFD700; margin: 5px 0; font-weight: bold; }
         .auth { font-size: 1em; color: #AAAAAA; margin: 10px 0; }
         .button { display: inline-block; background: #FFFFFF; color: #000000; padding: 12px 30px; font-size: 1.1em; text-decoration: none; border-radius: 8px; margin: 15px 0; font-weight: 700; }
         .button:hover { background: #EEEEEE; }
+        .promo-banner { background: #333; color: #FFF; padding: 20px; font-size: 1.5em; font-weight: bold; margin: 20px auto; max-width: 800px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
         footer { padding: 40px 20px; font-size: 0.9em; background: rgba(0,0,0,0.3); }
         footer a { color: #FFFFFF; margin: 0 15px; text-decoration: none; }
         footer a:hover { text-decoration: underline; }
@@ -36,13 +36,17 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
             <a href="shop.html">Shop</a>
+            <a href="index.html#roadmap">Roadmap</a>
         </nav>
     </header>
+
+    <div class="promo-banner">
+        Special Offer: Buy any 2 or more items and get R50 off per item!
+    </div>
 
     <section class="section">
         <h1>Shop - Raven Fracture Drop</h1>
         <p style="font-size: 1.3em; margin-bottom: 20px;">200 total across all 6 variants • R550 per tee (delivered SA, sealed black box) • Numbered • No reprints</p>
-        <p style="font-weight: bold; color: #FFD700; font-size: 1.2em;">Buy any 2 or more and get an extra R50 OFF</p>
         <p style="color: #FFD700; font-size: 1.1em; margin-bottom: 40px;">Every tee includes hand-numbered Certificate of Authenticity sticker</p>
 
         <div class="products">
@@ -76,29 +80,26 @@
                 <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Ash%20Relic%20(White%20tee%20gray%20ink)%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
             </div>
 
-<!-- 4. Crimson Flight (red + silver ink) -->
+            <!-- 4. Crimson Flight (red + silver ink) -->
             <div class="product">
                 <img src="crimson-flight.jpg" alt="Crimson Flight - Red Tee">
                 <h2>Crimson Flight</h2>
-                <p>Red Tee with silver ink raven</p>
+                <p>Red tee with silver ink raven</p>
                 <div class="price">R550</div>
                 <p class="auth">Includes hand-numbered Authenticity sticker</p>
-                <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Silent%20Fracture%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
+                <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Crimson%20Flight%20(Red%20tee)%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
             </div>
-        </div>
-    </section>
 
-    <!-- 5. Night Fall (navy blue + Silver ink) -->
+            <!-- 5. Nightfall (navy blue + silver ink) -->
             <div class="product">
-                <img src="night-fall.jpg" alt="NightFall Navy Blue Tee">
-                <h2>NightFall</h2>
-                <p>Navy Blue tee with silver ink raven</p>
+                <img src="nightfall.jpg" alt="Nightfall - Navy Blue Tee"> <!-- Updated name and src -->
+                <h2>Nightfall</h2>
+                <p>Navy blue tee with silver ink raven</p>
                 <div class="price">R550</div>
                 <p class="auth">Includes hand-numbered Authenticity sticker</p>
-                <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Silent%20Fracture%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
+                <a href="https://wa.me/27818649619?text=Hi%20Cobus,%20I%20want%20Nightfall%20(Navy%20blue%20tee)%20at%20R550.%20Please%20send%20Yoco%20link." class="button">Request Payment Link</a>
             </div>
-        </div>
-    </section>
+
             <!-- 6. Silent Fracture (your 6th variant) -->
             <div class="product">
                 <img src="silent-fracture.jpg" alt="Silent Fracture - Variant Tee">
@@ -120,4 +121,4 @@
         </div>
     </footer>
 </body>
-</html>
+                    </html>
