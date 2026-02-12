@@ -1,0 +1,41 @@
+/* VAULT X RELICS: TERMINAL OVERRIDE */
+
+/* 1. FORCE MONOSPACE EVERYWHERE */
+* {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace !important;
+  text-transform: uppercase; /* Makes everything look like a data log */
+  letter-spacing: 1px !important;
+}
+
+/* 2. THE VOID THEME */
+body, .header, .section-background, .footer {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+/* 3. THE "DECONSTRUCTED" BORDERS */
+/* Adds thin lines to image blocks like evidence files */
+.sqs-block-image {
+  border: 1px solid #333333;
+  padding: 15px;
+  filter: grayscale(100%); /* Keeps photos in brand style */
+}
+
+/* 4. REMOVE ALL ROUNDED EDGES */
+img, button, .sqs-block-button-element, input {
+  border-radius: 0px !important;
+  border: 1px solid #FFFFFF !important;
+}
+
+/* 5. BLINKING CURSOR ON TITLES */
+h1::after, h2::after {
+  content: "_";
+  animation: blink 1s infinite;
+}
+@keyframes blink { 0% {opacity: 0;} 50% {opacity: 1;} 100% {opacity: 0;} }
+
+/* 6. GREEN DATA SELECTION */
+::selection {
+  background: #00FF00;
+  color: #000;
+}
